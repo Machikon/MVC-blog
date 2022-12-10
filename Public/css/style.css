@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    background-color:#efefef;
+}
+header{
+    background: color #a9a9a9;
+    padding: 10px;
+    color: #0f0e0f;
+}
+
+
