@@ -4,7 +4,7 @@ const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all blog data
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findAll({
       include: [

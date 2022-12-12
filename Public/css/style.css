@@ -7,10 +7,15 @@ body{
     height:100vh;
     background-color:#efefef;
 }
-header{
+header, h1{
     background: color #a9a9a9;
     padding: 10px;
-    color: #0f0e0f;
+    color: #ff3b3f;
+}
+header a{
+    margin: 15px;
+    padding: 5px;
+    color: #ff3b3f;
 }
 
 

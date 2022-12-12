@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const newFormHandler = async (event) => {
     event.preventDefault();
   
@@ -14,11 +16,29 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to create  blog.');
+        alert('Failed to create blog.');
       }
     }
   };
 
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id)')){
+      const id = event.target.getAttribute('data-id');
+      const res = await fetch(`/api/blogs/${id}`, {
+        method: 'delete',
+      })
+      if (response.ok){
+        document.location.replace('/dashboard');
+      }else{
+        alert('Failed to delete blog.');
+      }
+      }
+    }
+  
+
   document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);
+
+  document.querySelector('.blog-list')
+  .addEventListener('click',delButtonHandler);
