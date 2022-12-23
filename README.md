@@ -25,5 +25,9 @@ npm packages
 Install Node.js, MySQL, Insomnia (if any of them is needed), and NPM.
 
 
- Deployed site: 
+Screenshots
+![image](https://user-images.githubusercontent.com/106935371/209276850-ccf0c7d0-e069-4d7e-8252-3d8396decee4.png)
+
+![image](https://user-images.githubusercontent.com/106935371/209276934-7baa8ee2-c52d-4f30-916e-fccfb1ec155d.png)
+
 
