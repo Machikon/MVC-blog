@@ -13,25 +13,27 @@
 
 <body>
   <header>
-    <h1>The Tech Blog</h1>
-  </header>
   <nav>
-    {{#if loggedIn}}
+       <h1>The Tech Blog</h1>
+    {{#if logged_In}}
     <a href="/">Home</a>
     <a href="/dashboard">Dashboard</a>
-    <a href="/logout">Logout</a>
-    <button id="logout" class="btn-no-style">Logout</button>
+    <a href="#" id="logout">Logout</a>
+    {{!-- <button id="logout" class="btn-no-style">Logout</button> --}}
     {{else}}
     <a href="/">Home</a>
     <a href="/dashboard">Dashboard</a>
     <a href="/login">Login</a>
-    {{if}}
+    {{/if}}
   </nav>
+  </header>
+
   <main>
-        <div class="blog">
+
+     <div class="blog">
       {{{body}}}
     </div>
   </main>
 </body>
-
+<script src="./js/logout.js"></script> 
 </html>

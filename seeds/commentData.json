@@ -1,13 +1,11 @@
 [
     {
-        "blog_id":1,
-        "comment_description":"Test Test",
-        "user_id":1
+        "commentDescription":"I agree!"
+
+       
     },
     
     {
-        "blog_id":2,
-        "comment_description":"Test Test test",
-        "user_id":2
+        "commentDescription":"Good job."
     }
 ]

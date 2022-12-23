@@ -11,30 +11,31 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    commentDescription: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date_created: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
-        type:DataTypes.INTEGER,
-        references:{
-            model:'user',
-            key:'id',
-        }
+    blogId: {
+      type: DataTypes.INTEGER,
+      references:{
+        model:'blog',
+        key:'id',  
+      }
     },
-    // blog_id: {
-    //     type:DataTypes.INTEGER,
-    //     references:{
-    //         model:'blog',
-    //         key:'id',
-    //     }
-    // },
-  },
+
+    userId: {
+      type: DataTypes.INTEGER,
+      references:{
+        model:'user',
+        key:'id',
+      }
+  }
+},
 
   {
     sequelize,

@@ -7,6 +7,8 @@ Users review the blogs on the main page and click on the blog of interest to rea
 
 ## Technologies used
 
+JavaScript, Node.js, Heroku, Insomnia
+
 npm packages
  - bcrypt
  - connect-session-sequelize
@@ -18,6 +20,10 @@ npm packages
  - sequelize
 
  ## Deployment
+
+## Installation
+Install Node.js, MySQL, Insomnia (if any of them is needed), and NPM.
+
 
  Deployed site: 
 

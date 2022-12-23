@@ -1,0 +1,25 @@
+<!-- For each blog post, the 'blog-details' partial is used to render the blog data -->
+
+  <div class="container">
+    <header class="container-home">
+      <h2>
+        Home Page
+      </h2>
+    </header>
+      <main class="container-main">
+        {{#each blogs as |blog|}}
+
+      <section class="card">
+        <a href="/blogs/{{blog.id}}" class="card-body">
+        <h3 class="card-title">{{blog.title}}</h3>
+        <h5>Posted by {{user.username}} on {{blog.date}}</h5>
+        <p class="card-text">{{blog.desc}}</p>
+        
+        </a>
+
+      </section>
+        {{/each}}
+
+
+
+ 

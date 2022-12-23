@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
-// const withAuth = require('../..utils/auth');
+const { User, Comment, Blog } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
-      user_id: req.session.user_id,
+      userId: req.session.user.Id,
+      blogId: req.body.blogId
     });
 
     res.status(200).json(newComment);
@@ -20,7 +21,6 @@ router.delete('/:id', async (req, res) => {
     const commentData = await Comment.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
@@ -37,8 +37,8 @@ router.delete('/:id', async (req, res) => {
 
 router.get('/', (req, res) => {
     
-      const commentData = Comment.findAll({
-
+      Comment.findAll({
+        include:[User, Blog]
       })
       .then(commentData => res.json(commentData))
       .catch (err => {res.status(500).json(err);
@@ -47,12 +47,35 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     
-    Comment.findAll({
-        id:req.params.id
+    Comment.findByPk(req.params.id, {
+      include:[User, Blog]
     })
+
+       
+    
     .then(commentData => res.json(commentData))
     .catch (err => {res.status(500).json(err);
   })
+});
+
+router.put('/:id', async (req, res) => {
+  try {
+    const commentData = await Comment.update(
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    if (!commentData) {
+      res.status(404).json({ message: 'No comment found with this id!' });
+      return;
+    }
+   
+    res.status(200).json(commentData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

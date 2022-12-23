@@ -3,19 +3,98 @@
     padding:0px;
     box-sizing: border-box;
 }
+title {
+    text-align: left;
+}
+
+.header {
+    width: 100%;
+    position: absolute;
+}
+
+nav {
+    height: 8rem;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: right;
+    justify-content: space-around;
+    background-color: lightgray;
+    
+}
+
 body{
     height:100vh;
-    background-color:#efefef;
+    width:70%;
+    background-color:lightgray;
+    text-align: center;
+    align-items: center;
+    padding-left: 30%;
+    
 }
 header, h1{
-    background: color #a9a9a9;
     padding: 10px;
     color: #ff3b3f;
+    background-color: lightgray;
+    text-align: left;
 }
 header a{
     margin: 15px;
     padding: 5px;
     color: #ff3b3f;
 }
+h2{
+    color: black;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+
+
+
+
+form{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    color: darkslateblue;
+    margin: .5rem;
+}
+
+form input {
+    width: 40%;
+    padding: 20px;   
+}
+
+form textarea {
+    width:40% ;
+    padding: 50px;
+}
+
+textarea#blog-description {
+   width: 40%;
+    height: 250px;
+}
+
+
+form button {
+    padding: 1rem 4rem;
+    margin-top: 1rem;
+    background-color:#ff3b3f ;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 798px) {
+    
+}
+
+
 
 
